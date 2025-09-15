@@ -571,3 +571,170 @@ body::after {
         height: 200px;
     }
 }
+
+/* Seção Fotos do Mês */
+.monthly-photos-section {
+    margin-bottom: 100px;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.monthly-photos-section h2 {
+    font-size: 3rem;
+    color: transparent;
+    background: linear-gradient(45deg, #ff6b9d, #ff8a80, #ffc1cc);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleShimmer 3s ease-in-out infinite;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 50px;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.months-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.month-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 40px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    color: white;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+.month-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.month-card:hover::before {
+    left: 100%;
+}
+
+.month-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(255, 107, 157, 0.3);
+    border-color: rgba(255, 107, 157, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.month-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+}
+
+.month-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.month-card p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    font-style: italic;
+}
+
+/* Animação de flutuação para os ícones */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .monthly-photos-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+    
+    .months-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .month-card {
+        padding: 30px 20px;
+    }
+    
+    .month-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .month-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .month-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .monthly-photos-section h2 {
+        font-size: 2rem;
+    }
+    
+    .months-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .month-card {
+        padding: 25px 15px;
+    }
+    
+    .month-icon {
+        font-size: 2rem;
+    }
+    
+    .month-card h3 {
+        font-size: 1.3rem;
+    }
+}

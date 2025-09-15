@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agosto - Nossos Momentos ❤️</title>
+    <link rel="stylesheet" href="month-page.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Botão de voltar -->
+        <div class="back-button">
+            <a href="../index.html" class="back-link">
+                <span class="back-arrow">←</span>
+                Voltar
+            </a>
+        </div>
+
+        <!-- Cabeçalho da página -->
+        <header class="month-header">
+            <div class="month-icon">🌻</div>
+            <h1>Setembro 2025</h1>
+            <p class="month-description">Verão e momentos especiais que vivemos juntos</p>
+        </header>
+
+        <!-- Galeria de fotos do mês -->
+        <section class="month-gallery">
+            <div class="photos-grid">
+                <div class="photo-item">
+                    <img src="/src/fotos/setembro/fotao.jpeg" alt="Momento especial de Agosto">
+                    <div class="photo-overlay">
+                        <div class="photo-date"></div>
+                        <div class="photo-caption">Uma foto linda para um lindo casal</div>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="/src/fotos/setembro/casal.jpeg" alt="Lembrança de Agosto">
+                    <div class="photo-overlay">
+                        <div class="photo-date"></div>
+                        <div class="photo-caption">A gente sendo um casalzão</div>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="/src/fotos/setembro/comer.jpeg" alt="Dia especial de Agosto">
+                    <div class="photo-overlay">
+                        <div class="photo-date"></div>
+                        <div class="photo-caption">Hmmmm comerrr</div>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="/src/fotos/setembro/juntos.jpeg" alt="Final de Agosto">
+                    <div class="photo-overlay">
+                        <div class="photo-date"></div>
+                        <div class="photo-caption">Niver da Ju</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Mensagem especial do mês -->
+        <section class="month-message">
+            <div class="message-card">
+                <h3>Setembro está sendo especial porque...</h3>
+                <p>Com a chegada do mes, nossos dias se encheram de cores e aconchego. Cada momento em Setembro está sendo um presente, construindo novas memórias e fortalecendo nosso amor. ❤️</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Animação de entrada das fotos
+        document.addEventListener('DOMContentLoaded', function( ) {
+            const photos = document.querySelectorAll('.photo-item');
+            photos.forEach((photo, index) => {
+                photo.style.animationDelay = `${index * 0.1}s`;
+                photo.classList.add('fade-in');
+            });
+        });
+    </script>
+</body>
+</html>

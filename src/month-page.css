@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 25%, #667eea 50%, #764ba2 75%, #f093fb 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease-in-out infinite;
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Botão de voltar */
+.back-button {
+    margin-bottom: 30px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-5px);
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+}
+
+.back-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.back-link:hover .back-arrow {
+    transform: translateX(-3px);
+}
+
+/* Cabeçalho da página */
+.month-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px 0;
+}
+
+.month-header .month-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.month-header h1 {
+    font-size: 3.5rem;
+    color: transparent;
+    background: linear-gradient(45deg, #ff6b9d, #ff8a80, #ffc1cc);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleShimmer 3s ease-in-out infinite;
+    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.month-description {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* Galeria de fotos */
+.month-gallery {
+    margin-bottom: 80px;
+}
+
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 12fr)); /* Ajuste este valor conforme o tamanho desejado */
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.photo-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.photo-item.fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.photo-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(255, 107, 157, 0.3);
+    border-color: rgba(255, 107, 157, 0.5);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 30px 20px 20px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.photo-item:hover .photo-overlay {
+    transform: translateY(0);
+}
+
+.photo-date {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.photo-caption {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Mensagem especial */
+.month-message {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.message-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.message-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ffc1cc;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.message-card p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+}
+
+/* Animações */
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes titleShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .month-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .month-header .month-icon {
+        font-size: 3rem;
+    }
+    
+    .month-description {
+        font-size: 1.1rem;
+    }
+    
+    .photos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .photo-item img {
+        height: 200px;
+    }
+    
+    .message-card {
+        padding: 30px 20px;
+    }
+    
+    .message-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .message-card p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .month-header h1 {
+        font-size: 2rem;
+    }
+    
+    .photos-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .photo-item img {
+        height: 180px;
+    }
+    
+    .back-link {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
